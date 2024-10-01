@@ -9,7 +9,7 @@ import { Category } from "../../models/category.model";
     templateUrl: 'posts.component.html'
 })
 export class Posts {
-    badgeBaseLink: string = "/posts?category=";
+    categoryBaseLink: string = "/posts?category=";
     categories: Category[] = [
         {
             id: 1,

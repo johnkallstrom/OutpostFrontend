@@ -5,7 +5,7 @@
     @for (category of categories; track category.id) {
     <badge
       label="{{ category.name }}"
-      link="{{ badgeBaseLink + category.name?.toLowerCase() }}"
+      link="{{ categoryBaseLink + category.name?.toLowerCase() }}"
     ></badge>
     }
   </div>

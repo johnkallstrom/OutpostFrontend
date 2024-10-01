@@ -2,14 +2,12 @@
 <hr />
 <div class="row mb-3">
   <div class="col-sm-6">
-    <badge></badge>
-    <badge></badge>
-    <badge></badge>
-    <badge></badge>
-    <badge></badge>
-    <badge></badge>
-    <badge></badge>
-    <badge></badge>
+    @for (category of categories; track category.id) {
+    <badge
+      label="{{ category.name }}"
+      link="{{ badgeBaseLink + category.name?.toLowerCase() }}"
+    ></badge>
+    }
   </div>
 </div>
 <div class="row gy-3">

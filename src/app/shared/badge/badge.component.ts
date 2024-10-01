@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     standalone: true,
@@ -6,6 +6,6 @@ import { Component } from "@angular/core";
     templateUrl: 'badge.component.html'
 })
 export class Badge {
-    label: string = "Cities";
-    link: string = "/posts?category=Cities"
+    @Input() label: string = "(No label)";
+    @Input() link: string = ""
 };

@@ -1,39 +1,23 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Badge } from "../../shared/badge/badge.component";
 import { Card } from "../../shared/card/card.component";
 import { Category } from "../../models/category.model";
+import { CategoryService } from "../../services/categoryService";
 
 @Component({
     standalone: true,
     imports: [Badge, Card],
     templateUrl: 'posts.component.html'
 })
-export class Posts {
+export class Posts implements OnInit {
     categoryBaseLink: string = "/posts?category=";
-    categories: Category[] = [
-        {
-            id: 1,
-            name: "Movies"
-        },
-        {
-            id: 2,
-            name: "Programming"
-        },
-        {
-            id: 3,
-            name: "Games"
-        },
-        {
-            id: 4,
-            name: "Plants"
-        },
-        {
-            id: 5,
-            name: "Cities"
-        },
-        {
-            id: 6,
-            name: "Boardgames"
-        },
-    ]
+    categories: Category[] = [];
+
+    constructor(private categoryService: CategoryService) {
+
+    }
+
+    ngOnInit(): void {
+        this.categoryService.getList().subscribe(data => this.categories = data);
+    }
 };

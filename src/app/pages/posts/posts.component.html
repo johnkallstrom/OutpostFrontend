@@ -5,28 +5,15 @@
     @for (category of categories; track category.id) {
     <badge
       label="{{ category.name }}"
-      link="{{ categoryBaseLink + category.name?.toLowerCase() }}"
+      link="{{ categoryBadgeBaseLink + category.name?.toLowerCase() }}"
     ></badge>
     }
   </div>
 </div>
 <div class="row gy-3">
+  @for (post of posts; track post.id) {
   <div class="col-sm-4">
-    <card></card>
+    <card title="{{ post.title }}" body="{{ post.body }}"></card>
   </div>
-  <div class="col-sm-4">
-    <card></card>
-  </div>
-  <div class="col-sm-4">
-    <card></card>
-  </div>
-  <div class="col-sm-4">
-    <card></card>
-  </div>
-  <div class="col-sm-4">
-    <card></card>
-  </div>
-  <div class="col-sm-4">
-    <card></card>
-  </div>
+  }
 </div>

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     standalone: true,
@@ -6,4 +6,6 @@ import { Component } from "@angular/core";
     templateUrl: 'card.component.html'
 })
 export class Card {
+    @Input() title: string = "(No title)";
+    @Input() body: string = "";
 };
